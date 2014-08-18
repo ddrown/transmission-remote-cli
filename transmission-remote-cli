@@ -2180,6 +2180,8 @@ class Interface:
             if time_left < 86400:   # 1 day
                 info[-1].append('approaching %.2f at %s' % \
                                     (target_ratio, timestamp(time.time() + time_left, "%R")))
+            elif time_left > 86400 * 10000: # 10,000 days
+                info[-1].append('approaching %.2f at (>10000 days)' % target_ratio)
             else:
                 info[-1].append('approaching %.2f on %s' % \
                                     (target_ratio, timestamp(time.time() + time_left, "%x")))
